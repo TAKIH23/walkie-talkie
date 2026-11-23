@@ -2,7 +2,7 @@ name: Build APK
 on:
   push:
     branches: [main, master]
-  workflow_dispatch:
+  workflow_dispatch: WalkieTalkie
 jobs:
   build:
     runs-on: ubuntu-latest
