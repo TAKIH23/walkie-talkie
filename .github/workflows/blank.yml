@@ -17,7 +17,10 @@ jobs:
           gradle-version: 8.2
       - name: Build debug APK
         run: |
-          cd "$(dirname "$(find . -name settings.gradle.kts | head -1)")"
+          ls
+          for z in *.zip; do [ -f "$z" ] && unzip -oq "$z"; done
+          D=$(dirname "$(find . -name settings.gradle.kts | head -1)")
+          cd "$D"
           gradle assembleDebug --no-daemon
       - uses: actions/upload-artifact@v4
         with:
